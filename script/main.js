@@ -13,7 +13,7 @@
         let objectIndex = dynamicContent[this.id];
 
         while(subImages.firstChild) {
-          subImages.renewChild(subImages.firstChild);
+          subImages.removeChild(subImages.firstChild);
         }
 
         //add the images to the bottom of the page
@@ -40,8 +40,9 @@
         appliedClass = this.id;
   }
 
-  //theImages.forEach(function(image, index){
-        //add an event handler to each image
-        //image.addEventListener('click', changeElements, false);
+  theImages.forEach(function(image, index){
+      //add an event handler to each image
+      image.addEventListener('click', changeElements, false);
+    });
 
 })();
