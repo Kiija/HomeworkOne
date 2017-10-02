@@ -42,7 +42,7 @@ section { margin-top: 15px; background-color: #FFF; }
 	padding-left: 20px;
 	padding-top: 20px;
 	margin: 0; b
-	order:0px;
+	order: 0px;
 }
 
 .main-copy p {
@@ -56,3 +56,53 @@ section { margin-top: 15px; background-color: #FFF; }
 .subImagesContainer { padding: 0; }
 
 .thumb { height: 90px; margin: 8px; cursor: pointer; }
+
+.lightbox{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	color: white;
+	background-color: rgba(0,0,0,0.85);
+	display: none;
+}
+
+.close-lightbox {
+	position: absolute;
+	float: right;
+	right: 20px;
+	margin-top: 20px;
+	font-size: 2em;
+	cursor: pointer;
+}
+
+.boxBackground{
+	background-color: white;
+	display: block;
+	height: auto;
+	margin: auto;
+	max-width: 550px;
+	min-width: 550px;
+}
+
+.lightbox-img {
+	display: block;
+	height: auto;
+	margin: auto;
+	max-width: 500px;
+	min-width: 500px;
+	padding-top: 25px;
+	padding-bottom: 15px;
+}
+
+.img-desc {
+	display: block;
+	margin: auto;
+	width: 500px;
+	font-size: 1.2em;
+	color: grey;
+	padding-bottom: 25px;
+
+}
