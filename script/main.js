@@ -28,7 +28,7 @@
           newSubImg.dataset.index = index;
 
           //add an event hnadler to trigger a lightbox
-          newSubImg.addEventListener('click', popLightbox, false);
+          newSubImg.addEventListener('click', function() { popLightbox(index, objectIndex); }, false);
 
 
           //ad it to the page
@@ -53,14 +53,35 @@
     });
 
     //trigger the lightbox
-    function popLightbox(){
+    function popLightbox(currentIndex, currentObject) {
       //debugger;
-      //trigger the lightbox overlay so that we can see it
+      //move the window to the top every time we click 0 quick bug fix
+      window.scrollTo(0,0);
+      document.body.style.overflow = "hidden";
+
       let lightbox = document.querySelector('.lightbox');
+      let lightboxImg = lightbox.querySelector('img');
+      let lightboxDesc = lightbox.querySelector('p');
+      let lightboxClose = document.querySelector('.close-lightbox');
 
-      lightbox.style.display = "block";
+      lightbox.style.display = 'block';
+      lightboxImg.src = "images/" + currentObject.images[currentIndex];
+      lightboxDesc.innerHTML = currentObject.imageDescription[currentIndex];
 
+      lightboxClose.addEventListener('click', closeLightbox, false);
     }
+
+    function closeLightbox (){
+      let lightbox = document.querySelector('.lightbox');
+      let lightboxImg = lightbox.querySelector('img');
+      let lightboxDesc = lightbox.querySelector('p');
+
+      document.body.style.overflow = "scroll";
+      lightbox.style.display = "none";
+      lightboxImg.src = "";
+      lightboxDesc.innerHTML = "";
+    }
+
 
     //document.querySelector('#spring').click();
     changeElements.call(document.querySelector('#spring'));
